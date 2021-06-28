@@ -32,7 +32,8 @@ class MainActivity : BaseActivity() {
 
     override fun initListener() {
         binding.btnHitApi.setOnClickListener {
-            hitPostsApi()
+            //hitPostsApi()
+            showDialog("This is a test message",showCancelBtn = true,positiveText = "Yes",negativeText = "No")
         }
     }
 

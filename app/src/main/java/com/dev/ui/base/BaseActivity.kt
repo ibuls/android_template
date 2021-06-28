@@ -10,6 +10,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.dev.R
+import com.dev.ui.dialogs.AppAlertDialog
 import com.dev.ui.dialogs.CustomAlertDialog
 
 abstract class BaseActivity : AppCompatActivity() {
@@ -87,7 +88,7 @@ abstract class BaseActivity : AppCompatActivity() {
         reverseColors:Boolean = false,
     ) {
 
-        CustomAlertDialog(
+        AppAlertDialog(
             this,
             msg,
             positiveText,
@@ -101,7 +102,7 @@ abstract class BaseActivity : AppCompatActivity() {
             -1,
             useBlueForCancel,
             reverseColors
-        ).show()
+        ).show(supportFragmentManager,"")
 
     }
 
