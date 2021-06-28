@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_top_round"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+
+        tools:context=".view.fragments.DailyTargetBottomSheet">
+
+
+        <View
+            android:id="@+id/dividerView"
+            android:layout_width="39dp"
+            android:layout_height="7dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/cornerbackground"
+            android:backgroundTint="@color/veryLightPink" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_weight="1"
+                android:text="Choose an action"
+                android:textColor="@color/darkIndigo"
+                android:textSize="22sp" />
+
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/veryLightPink"
+            android:layout_marginTop="16dp"
+            />
+        <LinearLayout
+            android:id="@+id/btnOption1"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:orientation="horizontal"
+            android:textColor="@color/darkIndigo"
+            android:visibility="visible"
+            android:textSize="16sp" >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Option 1"
+                android:textColor="@color/darkIndigo"
+                android:textSize="16sp" />
+
+
+            <ImageView
+                android:id="@+id/cbCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/switch_thumb2"
+                android:thumb="@null" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/sepEditChallenge"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/veryLightPink" />
+
+
+        <TextView
+            android:id="@+id/btnOption2"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:text="Option 2"
+            android:textColor="@color/darkIndigo"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/sepDelete"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/veryLightPink" />
+
+
+
+    </LinearLayout>
+</layout>

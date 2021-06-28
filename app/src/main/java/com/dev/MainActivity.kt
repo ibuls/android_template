@@ -8,6 +8,7 @@ import com.MyApplication
 import com.dev.core.repository.PostsRepository
 import com.dev.databinding.ActivityMainBinding
 import com.dev.ui.base.BaseActivity
+import com.dev.ui.bottomsheet.DefaultBottomsheetFragment
 import com.mvvmref.utils.ApiStatus
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
@@ -33,7 +34,16 @@ class MainActivity : BaseActivity() {
     override fun initListener() {
         binding.btnHitApi.setOnClickListener {
             //hitPostsApi()
-            showDialog("This is a test message",showCancelBtn = true,positiveText = "Yes",negativeText = "No")
+            DefaultBottomsheetFragment.newInstance(object :DefaultBottomsheetFragment.ActionListener{
+                override fun onOption1() {
+                    showMessage("option 1 selected")
+                }
+
+                override fun onOption2() {
+                    showMessage("option 2 selected")
+                }
+
+            }).show(supportFragmentManager,"")
         }
     }
 
