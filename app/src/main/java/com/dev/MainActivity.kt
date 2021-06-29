@@ -33,17 +33,8 @@ class MainActivity : BaseActivity() {
 
     override fun initListener() {
         binding.btnHitApi.setOnClickListener {
-            //hitPostsApi()
-            DefaultBottomsheetFragment.newInstance(object :DefaultBottomsheetFragment.ActionListener{
-                override fun onOption1() {
-                    showMessage("option 1 selected")
-                }
+            hitPostsApi()
 
-                override fun onOption2() {
-                    showMessage("option 2 selected")
-                }
-
-            }).show(supportFragmentManager,"")
         }
     }
 
@@ -54,26 +45,26 @@ class MainActivity : BaseActivity() {
     private fun hitPostsApi() {
         lifecycleScope.launch(Dispatchers.IO) {
             repository.getRedditPosts().collect {
-              withContext(Dispatchers.Main){
-                  when (it.status) {
-                      ApiStatus.SUCCESS -> {
-                          hideLoader()
-                          it.data?.let { data->
-                              if (data.data.children.isNotEmpty()){
-                                  showMessage(data.data.children[0].data.title)
+                  withContext(Dispatchers.Main){
+                      when (it.status) {
+                          ApiStatus.SUCCESS -> {
+                              hideLoader()
+                              it.data?.let { data->
+                                  if (data.data.children.isNotEmpty()){
+                                      showMessage(data.data.children[0].data.title)
+                                  }
                               }
                           }
-                      }
-                      ApiStatus.ERROR -> {
-                          hideLoader()
-                          showMessage(it.message?:"")
-                      }
-                      ApiStatus.LOADING -> {
-                          showLoader()
+                          ApiStatus.ERROR -> {
+                              hideLoader()
+                              showMessage(it.message?:"")
+                          }
+                          ApiStatus.LOADING -> {
+                              showLoader()
+                          }
                       }
                   }
               }
             }
         }
     }
-}

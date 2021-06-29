@@ -22,7 +22,7 @@ import java.lang.Exception
 open class BaseRepository(private val app: MyApplication) {
 
     fun getApiClient(): ApiInterface {
-        return ApiService.getClient(app, if (BuildConfig.DEBUG)MyApplication.getFlipperInterceptor() else null)
+        return ApiService.getClient(app, if (BuildConfig.DEBUG)MyApplication.getNetworkInterceptor() else null)
     }
 
     suspend fun <T> hitApi(call: Call<JsonObject>?, objectType: Class<T>): Flow<ApiResponse<T>> {

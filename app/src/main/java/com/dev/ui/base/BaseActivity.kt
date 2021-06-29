@@ -11,7 +11,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.dev.R
 import com.dev.ui.dialogs.AppAlertDialog
-import com.dev.ui.dialogs.CustomAlertDialog
 
 abstract class BaseActivity : AppCompatActivity() {
 

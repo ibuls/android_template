@@ -41,6 +41,17 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+
+
+    signingConfigs {
+        appSigning {
+            storeFile file('/Users/piyushbulchandani/Documents/projects/Personal/AndroidTemplate/KeyStore')
+            storePassword 'android'
+            keyAlias 'ibuls'
+            keyPassword 'android'
+        }
+    }
+
     defaultConfig {
         applicationId "com.dev"
         minSdkVersion 23
@@ -62,12 +73,14 @@ android {
         productFlavors {
             staging {
                 resValue "string", "app_name_flavour", "Template Staging"
-                //signingConfig signingConfigs.liveSigning
                 buildConfigField 'String', 'BASE_URL', '"https://www.reddit.com/"'
+                signingConfig signingConfigs.appSigning
+
             }
             live {
                 buildConfigField 'String', 'BASE_URL', '"https://www.reddit.com/"'
                 resValue "string", "app_name_flavour", "Template Prod"
+                signingConfig signingConfigs.appSigning
             }
         }
 
