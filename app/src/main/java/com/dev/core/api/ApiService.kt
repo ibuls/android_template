@@ -150,7 +150,7 @@ class ApiService {
                         chain.proceed(request)
                     }
                        if (BuildConfig.DEBUG)
-                    builder.addNetworkInterceptor(StethoInterceptor())
+                    `builder.addNetworkInterceptor(StethoInterceptor())
                     */
 
 

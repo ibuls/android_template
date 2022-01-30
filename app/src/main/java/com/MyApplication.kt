@@ -1,21 +1,22 @@
 package com
 
 import android.app.Application
+import com.dev.BuildConfig
 import okhttp3.Interceptor
 
 class MyApplication : Application() {
 
     companion object{
         fun getNetworkInterceptor():Interceptor?{
-        return null
-        //   return FlipperManager.getFlipperInterceptor()
+        //return null
+           return FlipperManager.getFlipperInterceptor()
         }
     }
     override fun onCreate() {
         super.onCreate()
-        /*if (BuildConfig.DEBUG) {
+        if (BuildConfig.DEBUG) {
             FlipperManager.initNetworkDebug(this)
-        }*/
+        }
     }
 
 
