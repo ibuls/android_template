@@ -13,9 +13,6 @@ class PostsAdapter(val context:Context):PagingDataAdapter<Children,PostsAdapter.
 
     var listData:ArrayList<Children> = ArrayList()
 
-
-
-
     inner class ItemVH(val binding: ItemPostsBinding):RecyclerView.ViewHolder(binding.root){
         fun setData(){
             val data = listData[bindingAdapterPosition]
